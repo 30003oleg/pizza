@@ -1,7 +1,6 @@
 import './App.css';
+import {Categories, Header} from './components'
 
-
-import Header from './components/Header';
 
 
 
@@ -12,16 +11,13 @@ function App() {
       <div className="content">
         <div className="container">
           <div className="content__top">
-            <div className="categories">
-              <ul>
-                <li className="active">Все</li>
-                <li>Мясные</li>
-                <li>Вегетарианская</li>
-                <li>Гриль</li>
-                <li>Острые</li>
-                <li>Закрытые</li>
-              </ul>
-            </div>
+            <Categories items={[
+              'Мясные',
+              'Веганские',
+              'Гриль',
+              'Закрытые',
+              'Острые',
+              ]}  />
             <div className="sort">
               <div className="sort__label">
                 <svg
