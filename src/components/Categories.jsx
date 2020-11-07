@@ -6,8 +6,9 @@ export default function Categories({items}) {
               <ul>
                 <li className="active">Все</li>                
                 {
-                    items.map(name => <li>{name}</li>)
-                }
+                    items.map((name, index) => (
+                    <li key={`${name}_${index}`}>{name}</li>
+                ))}
               </ul>
         </div>
     )
