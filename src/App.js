@@ -5,6 +5,10 @@ import {Categories, Header} from './components'
 
 
 function App() {
+  
+
+
+
   return (
     <div className="wrapper">
       <Header/>
@@ -17,7 +21,8 @@ function App() {
               'Гриль',
               'Закрытые',
               'Острые',
-              ]}  />
+              ]}  
+              onClickItem={(name) => console.log(name)}/>
             <div className="sort">
               <div className="sort__label">
                 <svg
