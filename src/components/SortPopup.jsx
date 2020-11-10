@@ -3,9 +3,29 @@ import React from 'react'
 function SortPopup() {
     const [IsPopupShown, showPopup] = React.useState(false);
 
+    const sortRef = React.useRef(null);
+    
+    const toggleShowPopup = () => {
+        showPopup(!IsPopupShown)
+    }
+
+    const whereClicked = (e) => {
+        //console.log (e.path)
+        
+        if (!e.path.includes(sortRef.current)) {showPopup(false)}
+        
+    }
+
+    
+    
+    React.useEffect(() => {
+        document.addEventListener('click', whereClicked);       
+        
+    }, [])
+
 
     return (
-        <div className="sort">
+        <div ref={sortRef} className="sort">
               <div className="sort__label">
                 <svg
                   width="10"
@@ -19,7 +39,7 @@ function SortPopup() {
                   />
                 </svg>
                 <b>Сортировка по:</b>
-                <span onClick = {() => showPopup(!IsPopupShown)}>популярности</span>
+                <span onClick = {toggleShowPopup}>популярности</span>
               </div>
               {IsPopupShown && (<div className="sort__popup">
                 <ul>
