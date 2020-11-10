@@ -11,7 +11,7 @@ export default function Categories({items, onClickItem}) {
         <div className="categories">
               <ul>
                 <li onClick={() => onSelectItem(null)} className={activeItem===null?'active':''}>Все</li>                
-                {
+                {items &&
                     items.map((name, index) => (
                     <li 
                         onClick={() => onSelectItem(index)} key={`${name}_${index}`}
