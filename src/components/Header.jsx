@@ -20,10 +20,8 @@ function Header() {
         </div>
       </div>
       <div className="header__cart">
-        <Button onClick={clickPoKnopke} className ='button--cart'>чилдрен</Button>
-        <a href="/cart.html" className="button button--cart">
-          
-        </a>
+        <Button onClick={clickPoKnopke} className ='button--cart'></Button>
+        
       </div>
     </div>
   </div>)
