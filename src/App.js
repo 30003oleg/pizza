@@ -5,21 +5,14 @@ import { Home, Cart } from './pages';
 import React from 'react';
 import Axios from 'axios';
 import PropTypes from 'prop-types';
-import { useSelector, useDispatch } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { setPizzas } from './redux/actions/pizzas';
 // import store from './redux/store';
 
 function App() {
 
   const dispatch = useDispatch();
-  const { items } = useSelector(
-    ({ pizzas, filters }) => {
-      return {
-        items: pizzas.items,
-        sortBy: filters.sortBy,
-      }
-    }
-  );
+
 
   React.useEffect(() => {
     Axios.get('http://localhost:3000/db.json').then(({ data }) => {
@@ -31,7 +24,7 @@ function App() {
     <div className="wrapper">
       <Header />
       <div className="content">
-        <Route exact path='/' render={() => <Home items={items} />} />
+        <Route exact path='/' component={Home} /* render={() => <Home items={items}  />}*/ />
         <Route exact path='/cart' component={Cart} />
       </div>
     </div>
