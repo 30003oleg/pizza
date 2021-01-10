@@ -3,22 +3,13 @@ import './App.css';
 import { Header, PizzaBlock } from './components';
 import { Home, Cart } from './pages';
 import React from 'react';
-import Axios from 'axios';
 import PropTypes from 'prop-types';
-import { useDispatch } from 'react-redux';
-import { setPizzas } from './redux/actions/pizzas';
+
 // import store from './redux/store';
 
 function App() {
 
-  const dispatch = useDispatch();
 
-
-  React.useEffect(() => {
-    Axios.get('http://localhost:3000/db.json').then(({ data }) => {
-      dispatch(setPizzas(data.pizzas));
-    });
-  }, []);
 
   return (
     <div className="wrapper">
